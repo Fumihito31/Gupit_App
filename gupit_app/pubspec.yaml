@@ -9,11 +9,31 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  animate_do: ^3.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "lib/assets/Gupit.png"
+  min_sdk_android: 19
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "lib/assets/Gupit.png"
 
 flutter:
   uses-material-design: true
+
+  assets:
+
+  - lib/assets/CASUAL.png
+  - lib/assets/gelo.jpg
+  - lib/assets/noprof.jpg
+  - lib/assets/gelo2.jpg
+  - lib/assets/Gupit.png
+
