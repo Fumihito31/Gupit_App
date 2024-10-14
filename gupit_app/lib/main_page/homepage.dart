@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/background.dart'; // Import the background file
 import '../components/bot_nav.dart';
 import '../main_page/profile.dart';
 
@@ -27,60 +28,63 @@ class _HomePageState extends State<HomePage> {
       // For example, you can show other pages or content here
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Image banner
-              Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  image: DecorationImage(
-                    image: AssetImage('lib/assets/gelo.jpg'), // Replace with the banner image
-                    fit: BoxFit.cover,
+      body: Background( // Apply black background
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Image banner
+                Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    image: DecorationImage(
+                      image: AssetImage('lib/assets/gelo.jpg'), // Replace with the banner image
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20),
+                SizedBox(height: 20),
 
-              // Nearest Barbershop section
-              Text(
-                "Nearest Barbershop",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 10),
-              buildBarberList(), // Function to display list of nearest barbershops
-
-              SizedBox(height: 20),
-
-              // Most recommended section
-              Text(
-                "Most Recommended",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 10),
-              buildBarberList(), // Reusing the same list
-
-              SizedBox(height: 20),
-
-              // Find a barber nearby section
-              Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey[300],
+                // Nearest Barbershop section
+                Text(
+                  "Nearest Barbershop",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white), // White text
                 ),
-                child: Center(
-                  child: Text("Find a Barber Nearby"),
+                SizedBox(height: 10),
+                buildBarberList(), // Function to display list of nearest barbershops
+
+                SizedBox(height: 20),
+
+                // Most recommended section
+                Text(
+                  "Most Recommended",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white), // White text
                 ),
-              ),
-            ],
+                SizedBox(height: 10),
+                buildBarberList(), // Reusing the same list
+
+                SizedBox(height: 20),
+
+                // Find a barber nearby section
+                Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.grey[300],
+                  ),
+                  child: Center(
+                    child: Text("Find a Barber Nearby"),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -103,8 +107,8 @@ class _HomePageState extends State<HomePage> {
       children: barbers.map((barber) {
         return ListTile(
           leading: Image.asset(barber['image']!, width: 50, height: 50), // Barber image
-          title: Text(barber['name']!),
-          subtitle: Text('${barber['service']} - ${barber['distance']}'),
+          title: Text(barber['name']!, style: TextStyle(color: Colors.white)), // Set text to white
+          subtitle: Text('${barber['service']} - ${barber['distance']}', style: TextStyle(color: Colors.white70)), // Set text to lighter white
           trailing: ElevatedButton(
             onPressed: () {},
             child: Text('Booking'),

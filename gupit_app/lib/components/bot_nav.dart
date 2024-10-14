@@ -11,9 +11,9 @@ class BotNavBar extends StatelessWidget {
     return BottomNavigationBar(
       currentIndex: selectedIndex,
       onTap: onTap,
-      backgroundColor: Colors.black, // Set background color to black
-      selectedItemColor: Colors.yellow, // Set selected item color to yellow
-      unselectedItemColor: Colors.grey, // Set unselected item color to grey for better contrast
+      backgroundColor: Colors.blueGrey, // Set background color to black
+      selectedItemColor: Colors.orange, // Set selected item color to yellow
+      unselectedItemColor: Colors.blueGrey, // Set unselected item color to grey for better contrast
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
