@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/background.dart'; // Import the background file
-import '../components/bot_nav.dart';
-import '../main_page/profile.dart';
+import '../components/bot_nav.dart'; // Import BotNavBar
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,24 +8,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0; // Track the currently selected index
+  int _selectedIndex = 0; // Keep track of selected tab index
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      _selectedIndex = index; // Update selected tab index
     });
-
-    // Navigate to the respective page
-    if (index == 3) {
-      // Navigate to the ProfilePage when the Profile tab is tapped
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => ProfilePage()),
-      );
-    } else {
-      // Handle other tabs (you can implement this logic as needed)
-      // For example, you can show other pages or content here
-    }
   }
 
   @override
@@ -51,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(height: 20),
-
+                
                 // Nearest Barbershop section
                 Text(
                   "Nearest Barbershop",
@@ -69,20 +56,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 SizedBox(height: 10),
                 buildBarberList(), // Reusing the same list
-
-                SizedBox(height: 20),
-
-                // Find a barber nearby section
-                Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.grey[300],
-                  ),
-                  child: Center(
-                    child: Text("Find a Barber Nearby"),
-                  ),
-                ),
               ],
             ),
           ),
@@ -98,20 +71,27 @@ class _HomePageState extends State<HomePage> {
   Widget buildBarberList() {
     // Example barber data list
     final barbers = [
-      {'name': 'Alma Barbershop', 'service': 'Haircut & Styling', 'image': 'lib/assets/gelo2.jpg', 'distance': '2.6km'},
-      {'name': 'Herc Barbershop', 'service': 'Haircut & Massage', 'image': 'lib/assets/gelo.jpg', 'distance': '5.0km'},
-      {'name': 'Bartman', 'service': 'Haircut & Styling', 'image': 'lib/assets/gelo.jpg', 'distance': '10.3km'},
+      {'name': 'Oscar Barbershop', 'service': 'Haircut & Styling', 'image': 'lib/assets/1.jpg', 'distance': '2.6km'},
+      {'name': 'Old Town', 'service': 'Haircut & Massage', 'image': 'lib/assets/2.jpg', 'distance': '5.0km'},
+      {'name': 'Lookin Sharp Barber', 'service': 'Haircut & Styling', 'image': 'lib/assets/2.jpg', 'distance': '10.3km'},
+      {'name': 'Get Buzzed Barber', 'service': 'Beard Trim', 'image': 'lib/assets/3.jpg', 'distance': '8.2km'},
     ];
 
     return Column(
       children: barbers.map((barber) {
         return ListTile(
-          leading: Image.asset(barber['image']!, width: 50, height: 50), // Barber image
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: Image.asset(barber['image']!, width: 50, height: 50, fit: BoxFit.cover),
+          ), // Barber image
           title: Text(barber['name']!, style: TextStyle(color: Colors.white)), // Set text to white
           subtitle: Text('${barber['service']} - ${barber['distance']}', style: TextStyle(color: Colors.white70)), // Set text to lighter white
           trailing: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orangeAccent, // Button color
+            ),
             onPressed: () {},
-            child: Text('Booking'),
+            child: Text('Book', style: TextStyle(color: Colors.black)),
           ),
         );
       }).toList(),

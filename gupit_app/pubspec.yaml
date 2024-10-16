@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   animate_do: ^3.1.2
+  flutter_animate: ^4.5.0
+  google_maps_flutter: ^2.9.0
 
 dev_dependencies:
   flutter_test:
@@ -50,3 +52,6 @@ flutter:
   - lib/assets/12.jpg
   - lib/assets/13.jpg
   - lib/assets/14.jpg
+  - lib/assets/BS1.jpg
+  - lib/assets/BS2.jpg
+  - lib/assets/BS3.jpg
