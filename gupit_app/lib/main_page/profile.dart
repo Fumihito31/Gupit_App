@@ -1,21 +1,57 @@
 import 'package:flutter/material.dart';
 import '../components/background.dart'; // Import the background file
+import '../components/bot_nav.dart'; // Import the custom Bottom Navigation Bar
+import '../create_account/login_page.dart'; // Import the LoginPage
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  int _selectedIndex = 4; // Index for the Profile page in the Bottom Navigation Bar
+
+  // Handle the onTap functionality for the Bottom Navigation Bar
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  // Function to show confirmation dialog for logging out
+  void _confirmLogout() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Logout"),
+          content: Text("Are you sure you want to log out?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Dismiss the dialog
+              },
+              child: Text("No"),
+            ),
+            TextButton(
+              onPressed: () {
+                // Navigate to LoginPage when "Yes" is pressed
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
+              child: Text("Yes"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.edit),
-            onPressed: () {
-              // Navigate to the edit profile page or handle the edit action
-            },
-          ),
-        ],
-      ),
       body: Background( // Apply black background
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -59,15 +95,18 @@ class ProfilePage extends StatelessWidget {
               // Logout button
               Center(
                 child: ElevatedButton(
-                  onPressed: () {
-                    // Handle logout
-                  },
+                  onPressed: _confirmLogout, // Call the confirm logout function
                   child: Text('Logout'),
                 ),
               ),
             ],
           ),
         ),
+      ),
+      // Add the custom bottom navigation bar
+      bottomNavigationBar: BotNavBar(
+        selectedIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }

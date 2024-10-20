@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../main_page/homepage.dart'; // Import HomePage
 import '../main_page/chat.dart'; // Import ChatPage
 import '../main_page/profile.dart'; // Import ProfilePage
+import '../main_page/appointment.dart'; // Import AppointmentPage
+import '../main_page/shop.dart'; // Import ShopPage
 
 class BotNavBar extends StatelessWidget {
   final int selectedIndex;
@@ -30,12 +32,17 @@ class BotNavBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Icon(Icons.calendar_today_outlined),
           activeIcon: Icon(Icons.calendar_today),
-          label: 'Booking',
+          label: 'Appointment',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.chat_bubble_outline),
           activeIcon: Icon(Icons.chat_bubble),
           label: 'Chat',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.shopping_bag_outlined), // Added icon for shop
+          activeIcon: Icon(Icons.shopping_bag), // Active icon for shop
+          label: 'Shop',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person_outline),
@@ -49,13 +56,34 @@ class BotNavBar extends StatelessWidget {
   void _handleNavigation(int index, BuildContext context) {
     switch (index) {
       case 0:
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomePage()),
+        );
+        break;
+      case 1:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => AppointmentPage()), // Navigate to AppointmentPage
+        );
         break;
       case 2:
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ChatPage()));
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => ChatPage()),
+        );
         break;
       case 3:
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => ShopPage()), // Navigate to ShopPage
+        );
+        break;
+      case 4:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => ProfilePage()),
+        );
         break;
       default:
         // Handle other tabs if necessary
