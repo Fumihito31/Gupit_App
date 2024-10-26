@@ -1,0 +1,56 @@
+{
+    "barbers": [
+      {
+        "id": 1,
+        "name": "Oscar's Barbershop",
+        "location": "123 Rizal Avenue, Batangas City, Batangas, 4200",
+        "rating": 4.5,
+        "services": [
+          {
+            "name": "Haircut",
+            "price": 300
+          },
+          {
+            "name": "Shave",
+            "price": 150
+          }
+        ],
+        "image": "lib/assets/BS2.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Old Town Barbershop",
+        "location": "456 P. Burgos Street, Lipa City, Batangas, 4217",
+        "rating": 4.2,
+        "services": [
+          {
+            "name": "Haircut",
+            "price": 250
+          },
+          {
+            "name": "Beard Trim",
+            "price": 100
+          }
+        ],
+        "image": "lib/assets/BS1.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Downtown Clippers",
+        "location": "789 Mabini Street, Tanauan City, Batangas, 4232",
+        "rating": 4.8,
+        "services": [
+          {
+            "name": "Haircut",
+            "price": 350
+          },
+          {
+            "name": "Hair Color",
+            "price": 500
+          }
+        ],
+        "image": "lib/assets/BS3.jpg"
+      }
+    ]
+  }
+  

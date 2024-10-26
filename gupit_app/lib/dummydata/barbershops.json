@@ -1,0 +1,93 @@
+{
+    "barbershops": [
+      {
+        "id": 1,
+        "name": "Groom and Glory",
+        "location": "15 P. Laurel Highway, Lipa City, Batangas, 4217",
+        "contact_number": "0917-123-4567",
+        "rating": 4.7,
+        "services": [
+          {
+            "name": "Haircut",
+            "price": 350
+          },
+          {
+            "name": "Haircut + Shave",
+            "price": 500
+          },
+          {
+            "name": "Scalp Treatment",
+            "price": 700
+          }
+        ],
+        "image": "lib/assets/BS.jpeg"
+      },
+      {
+        "id": 2,
+        "name": "Batangas Blade",
+        "location": "87 San Jose Street, Batangas City, Batangas, 4200",
+        "contact_number": "0927-654-3210",
+        "rating": 4.5,
+        "services": [
+          {
+            "name": "Beard Trim",
+            "price": 200
+          },
+          {
+            "name": "Haircut",
+            "price": 300
+          },
+          {
+            "name": "Hot Towel Shave",
+            "price": 250
+          }
+        ],
+        "image": "lib/assets/BS1.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Elite Cuts",
+        "location": "125 JP Rizal Avenue, Tanauan City, Batangas, 4232",
+        "contact_number": "0918-789-1011",
+        "rating": 4.9,
+        "services": [
+          {
+            "name": "Haircut",
+            "price": 400
+          },
+          {
+            "name": "Beard Trim",
+            "price": 250
+          },
+          {
+            "name": "Hair Color",
+            "price": 600
+          }
+        ],
+        "image": "lib/assets/BS2.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Sharp and Dapper",
+        "location": "Corner of J. Gonzales and Mabini Streets, Nasugbu, Batangas, 4231",
+        "contact_number": "0928-543-2112",
+        "rating": 4.6,
+        "services": [
+          {
+            "name": "Haircut",
+            "price": 350
+          },
+          {
+            "name": "Shave",
+            "price": 150
+          },
+          {
+            "name": "Facial Massage",
+            "price": 500
+          }
+        ],
+        "image": "lib/assets/BS3.jpg"
+      }
+    ]
+  }
+  

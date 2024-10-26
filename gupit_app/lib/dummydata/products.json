@@ -1,0 +1,81 @@
+{
+    "products": {
+      "Haircare": [
+        {
+          "id": 1,
+          "name": "Slick Pomade",
+          "description": "Strong hold pomade with a sleek, shiny finish. Perfect for formal hairstyles.",
+          "price": 350,
+          "image": "lib/assets/pomade.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Matte Clay",
+          "description": "Flexible hold clay for a natural, matte finish. Ideal for casual, textured styles.",
+          "price": 400,
+          "image": "lib/assets/clay.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Volumizing Shampoo",
+          "description": "Boosts hair volume while gently cleansing your scalp.",
+          "price": 250,
+          "image": "lib/assets/shampoo.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Conditioning Cream",
+          "description": "Deeply moisturizes hair to keep it soft and manageable.",
+          "price": 300,
+          "image": "lib/assets/conditioner.jpg"
+        }
+      ],
+      "Beardcare": [
+        {
+          "id": 5,
+          "name": "Beard Oil",
+          "description": "Nourishing oil to keep your beard soft and healthy. Reduces itchiness and promotes growth.",
+          "price": 450,
+          "image": "lib/assets/oil.jpg"
+        },
+        {
+          "id": 6,
+          "name": "Beard Balm",
+          "description": "Conditioning balm that shapes and holds your beard while keeping it smooth.",
+          "price": 500,
+          "image": "lib/assets/balm.jpg"
+        },
+        {
+          "id": 7,
+          "name": "Beard Wash",
+          "description": "Specially formulated to cleanse and soften facial hair.",
+          "price": 350,
+          "image": "lib/assets/wash.jpg"
+        }
+      ],
+      "Accessories": [
+        {
+          "id": 8,
+          "name": "Barber Scissors",
+          "description": "High-quality stainless steel barber scissors for precise cutting.",
+          "price": 1200,
+          "image": "lib/assets/scissors.jpg"
+        },
+        {
+          "id": 9,
+          "name": "Straight Razor",
+          "description": "Professional straight razor for a close and smooth shave.",
+          "price": 800,
+          "image": "lib/assets/razor.jpg"
+        },
+        {
+          "id": 10,
+          "name": "Hair Comb Set",
+          "description": "A set of durable combs for styling and managing hair.",
+          "price": 250,
+          "image": "lib/assets/combs.jpg"
+        }
+      ]
+    }
+  }
+  

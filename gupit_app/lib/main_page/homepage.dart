@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import '../components/background.dart'; // Import the background file
-import '../components/bot_nav.dart'; // Import BotNavBar
+import 'dart:convert';
+import 'package:flutter/services.dart';
+import '../components/background.dart';
+import '../components/bot_nav.dart';
+import 'package:carousel_slider/carousel_slider.dart'; // For carousel functionality
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,54 +11,84 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0; // Keep track of selected tab index
+  int _selectedIndex = 0;
+  List<dynamic> _barbershops = [];
+  List<dynamic> _popularBarbers = [];
+  List<dynamic> _products = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadBarbershopsData();
+    _loadPopularBarbersData();
+    _loadProductsData();
+  }
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index; // Update selected tab index
+      _selectedIndex = index;
+    });
+  }
+
+  Future<void> _loadBarbershopsData() async {
+    final String response = await rootBundle.loadString('lib/dummydata/barbershops.json');
+    final data = await json.decode(response);
+    setState(() {
+      _barbershops = data['barbershops'];
+    });
+  }
+
+  Future<void> _loadPopularBarbersData() async {
+    final String response = await rootBundle.loadString('lib/dummydata/barbers.json');
+    final data = await json.decode(response);
+    setState(() {
+      _popularBarbers = data['barbers'];
+    });
+  }
+
+  Future<void> _loadProductsData() async {
+    final String response = await rootBundle.loadString('lib/dummydata/products.json');
+    final data = await json.decode(response);
+
+    setState(() {
+      // Flatten all categories into a single list
+      _products = (data['products'] as Map<String, dynamic>)
+          .values
+          .expand((category) => category)
+          .toList();
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Background( // Apply black background
+      body: Background(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Image banner
-                Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    image: DecorationImage(
-                      image: AssetImage('lib/assets/gelo.jpg'), // Replace with the banner image
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
+                buildImageBanner(),
                 SizedBox(height: 20),
-                
-                // Nearest Barbershop section
-                Text(
-                  "Nearest Barbershop",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white), // White text
-                ),
-                SizedBox(height: 10),
-                buildBarberList(), // Function to display list of nearest barbershops
+
+                buildSectionTitle("Recommended Shops Near Me"),
+                buildBarberList(_barbershops.where((shop) => shop['recommended'] == true).toList()),
 
                 SizedBox(height: 20),
 
-                // Most recommended section
-                Text(
-                  "Most Recommended",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white), // White text
-                ),
-                SizedBox(height: 10),
-                buildBarberList(), // Reusing the same list
+                buildSectionTitle("Most Popular Shops"),
+                buildBarberList(_barbershops.where((shop) => shop['rating'] > 4.5).toList()),
+
+                SizedBox(height: 20),
+
+                buildSectionTitle("Popular Barbers"),
+                buildPopularBarbersList(),
+
+                SizedBox(height: 20),
+
+                buildSectionTitle("Featured Products"),
+                buildProductsCarousel(),
               ],
             ),
           ),
@@ -68,31 +101,100 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildBarberList() {
-    // Example barber data list
-    final barbers = [
-      {'name': 'Oscar Barbershop', 'service': 'Haircut & Styling', 'image': 'lib/assets/1.jpg', 'distance': '2.6km'},
-      {'name': 'Old Town', 'service': 'Haircut & Massage', 'image': 'lib/assets/2.jpg', 'distance': '5.0km'},
-      {'name': 'Lookin Sharp Barber', 'service': 'Haircut & Styling', 'image': 'lib/assets/2.jpg', 'distance': '10.3km'},
-      {'name': 'Get Buzzed Barber', 'service': 'Beard Trim', 'image': 'lib/assets/3.jpg', 'distance': '8.2km'},
-    ];
+  Widget buildImageBanner() {
+    return Container(
+      height: 200,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        image: DecorationImage(
+          image: AssetImage('lib/assets/BS1.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
 
+  Widget buildSectionTitle(String title) {
+    return Text(
+      title,
+      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+    );
+  }
+
+  Widget buildBarberList(List<dynamic> barbershops) {
     return Column(
-      children: barbers.map((barber) {
+      children: barbershops.map((shop) {
         return ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(8.0),
-            child: Image.asset(barber['image']!, width: 50, height: 50, fit: BoxFit.cover),
-          ), // Barber image
-          title: Text(barber['name']!, style: TextStyle(color: Colors.white)), // Set text to white
-          subtitle: Text('${barber['service']} - ${barber['distance']}', style: TextStyle(color: Colors.white70)), // Set text to lighter white
+            child: Image.asset(shop['image'], width: 50, height: 50, fit: BoxFit.cover),
+          ),
+          title: Text(shop['name'], style: TextStyle(color: Colors.white)),
+          subtitle: Text(shop['location'], style: TextStyle(color: Colors.white70)),
           trailing: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.orangeAccent, // Button color
-            ),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.orangeAccent),
             onPressed: () {},
             child: Text('Book', style: TextStyle(color: Colors.black)),
           ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget buildPopularBarbersList() {
+    return Column(
+      children: _popularBarbers.map((barber) {
+        return ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: Image.asset(barber['image'], width: 50, height: 50, fit: BoxFit.cover),
+          ),
+          title: Text(barber['name'], style: TextStyle(color: Colors.white)),
+          subtitle: Text(
+            barber['specialty'] ?? 'Specialty not available',
+            style: TextStyle(color: Colors.white70),
+          ),
+
+          trailing: Text('${barber['rating']} ⭐', style: TextStyle(color: Colors.orangeAccent)),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget buildProductsCarousel() {
+    return CarouselSlider(
+      options: CarouselOptions(
+        height: 150,
+        autoPlay: true,
+        enlargeCenterPage: true,
+      ),
+      items: _products.map((product) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Container(
+              width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.symmetric(horizontal: 5.0),
+              decoration: BoxDecoration(
+                color: Colors.grey[850],
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(product['image'], width: 60, height: 60, fit: BoxFit.cover),
+                  SizedBox(height: 10),
+                  Text(
+                    product['name'],
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  Text(
+                    '₱${product['price']}',
+                    style: TextStyle(color: Colors.orangeAccent),
+                  ),
+                ],
+              ),
+            );
+          },
         );
       }).toList(),
     );

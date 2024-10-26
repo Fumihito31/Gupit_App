@@ -12,6 +12,7 @@ dependencies:
   animate_do: ^3.1.2
   flutter_animate: ^4.5.0
   google_maps_flutter: ^2.9.0
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +53,20 @@ flutter:
   - lib/assets/12.jpg
   - lib/assets/13.jpg
   - lib/assets/14.jpg
+  - lib/assets/BS.jpeg
   - lib/assets/BS1.jpg
   - lib/assets/BS2.jpg
   - lib/assets/BS3.jpg
+  - lib/assets/balm.jpg
+  - lib/assets/clay.jpg
+  - lib/assets/comb.jpg
+  - lib/assets/conditioner.jpg
+  - lib/assets/oil.jpg
+  - lib/assets/pomade.jpg
+  - lib/assets/razor.jpg
+  - lib/assets/scissors.jpg
+  - lib/assets/shampoo.jpg
+  - lib/assets/wash.jpg
+  - lib/dummydata/barbers.json
+  - lib/dummydata/barbershops.json
+  - lib/dummydata/products.json

@@ -8,7 +8,7 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black87, // Set the background color to black
+      color: const Color.fromARGB(221, 0, 0, 0), // Set the background color to black
       child: child,
     );
   }
