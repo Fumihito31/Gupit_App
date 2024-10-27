@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/background.dart'; // Import your background.dart for the black background
+import '../components/background.dart'; // Import your background.dart for the background
 import '../components/bot_nav.dart'; // Import your bottom navigation bar widget
 import 'conversation_page.dart'; // Import the conversation page
 
@@ -20,7 +20,9 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Background( // Apply black background
+      // Set the app bar background color to white
+      body: Container( // Use Container instead of Background for a simple white background
+        color: Colors.white, // Set background color to white
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -28,7 +30,7 @@ class _ChatPageState extends State<ChatPage> {
             children: [
               Text(
                 'Online Barber',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black), // Change text color to black
               ),
               SizedBox(height: 10),
               SingleChildScrollView(
@@ -45,7 +47,7 @@ class _ChatPageState extends State<ChatPage> {
               SizedBox(height: 20),
               Text(
                 'Recent Chats',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black), // Change text color to black
               ),
               SizedBox(height: 10),
               Expanded(
@@ -80,7 +82,7 @@ class _ChatPageState extends State<ChatPage> {
             backgroundImage: AssetImage(imagePath),
           ),
           SizedBox(height: 5),
-          Text(name, style: TextStyle(color: Colors.white)),
+          Text(name, style: TextStyle(color: Colors.black)), // Change text color to black
         ],
       ),
     );
@@ -101,9 +103,9 @@ class _ChatPageState extends State<ChatPage> {
         radius: 30,
         backgroundImage: AssetImage(imagePath),
       ),
-      title: Text(name, style: TextStyle(color: Colors.white)),
-      subtitle: Text(message, style: TextStyle(color: Colors.white70)),
-      trailing: Text(time, style: TextStyle(color: Colors.white70)),
+      title: Text(name, style: TextStyle(color: Colors.black)), // Change text color to black
+      subtitle: Text(message, style: TextStyle(color: Colors.black54)), // Change text color to dark gray
+      trailing: Text(time, style: TextStyle(color: Colors.black54)), // Change text color to dark gray
     );
   }
 }

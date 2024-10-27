@@ -1,0 +1,93 @@
+{
+    "appointments": [
+      {
+        "id": 1,
+        "barber_id": 1,
+        "customer_name": "John Doe",
+        "date": "2024-11-01",
+        "time": "10:00 AM",
+        "status": "upcoming",
+        "service": "Haircut",
+        "price": 130,
+        "payment_status": "pending"
+      },
+      {
+        "id": 2,
+        "barber_id": 2,
+        "customer_name": "Jane Smith",
+        "date": "2024-10-30",
+        "time": "3:00 PM",
+        "status": "completed",
+        "service": "Beard Trim",
+        "price": 100,
+        "payment_status": "completed"
+      },
+      {
+        "id": 3,
+        "barber_id": 3,
+        "customer_name": "Michael Johnson",
+        "date": "2024-10-28",
+        "time": "1:00 PM",
+        "status": "canceled",
+        "service": "Hair Color",
+        "price": 500,
+        "payment_status": "refunded"
+      },
+      {
+        "id": 4,
+        "barber_id": 4,
+        "customer_name": "Emily Davis",
+        "date": "2024-10-29",
+        "time": "11:00 AM",
+        "status": "completed",
+        "service": "Haircut",
+        "price": 150,
+        "payment_status": "completed"
+      },
+      {
+        "id": 5,
+        "barber_id": 5,
+        "customer_name": "Chris Brown",
+        "date": "2024-11-05",
+        "time": "2:00 PM",
+        "status": "upcoming",
+        "service": "Shave",
+        "price": 150,
+        "payment_status": "pending"
+      },
+      {
+        "id": 6,
+        "barber_id": 6,
+        "customer_name": "Sarah Wilson",
+        "date": "2024-10-31",
+        "time": "9:00 AM",
+        "status": "upcoming",
+        "service": "Fade Cut",
+        "price": 180,
+        "payment_status": "pending"
+      },
+      {
+        "id": 7,
+        "barber_id": 7,
+        "customer_name": "David Martinez",
+        "date": "2024-10-25",
+        "time": "4:00 PM",
+        "status": "completed",
+        "service": "Layered Haircut",
+        "price": 200,
+        "payment_status": "completed"
+      },
+      {
+        "id": 8,
+        "barber_id": 8,
+        "customer_name": "Olivia Thompson",
+        "date": "2024-10-27",
+        "time": "5:00 PM",
+        "status": "upcoming",
+        "service": "Buzz Cut",
+        "price": 90,
+        "payment_status": "pending"
+      }
+    ]
+  }
+  

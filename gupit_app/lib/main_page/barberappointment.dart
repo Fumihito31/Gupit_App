@@ -1,58 +1,65 @@
 import 'package:flutter/material.dart';
 import '../components/bot_nav.dart';
 
-class AppointmentPage extends StatefulWidget {
+class BarberAppointmentPage extends StatefulWidget {
   final List<Map<String, dynamic>> appointments;
 
-  AppointmentPage({Key? key, required this.appointments}) : super(key: key);
+  BarberAppointmentPage({Key? key, required this.appointments}) : super(key: key);
 
   @override
-  _AppointmentPageState createState() => _AppointmentPageState();
+  _BarberAppointmentPageState createState() => _BarberAppointmentPageState();
 }
 
-class _AppointmentPageState extends State<AppointmentPage> {
+class _BarberAppointmentPageState extends State<BarberAppointmentPage> {
   int _selectedTab = 0;
 
   // Dummy appointment data
   final List<Map<String, dynamic>> dummyAppointments = [
     {
-      'image': 'lib/assets/BS.jpeg',
-      'shopName': 'Groom and Glory',
-      'address': '115 P. Laurel Highway, Lipa City, Batangas, 4217',
+      'image': 'lib/assets/1.jpg',
+      'clientName': 'John Doe',
+      'clientNumber': '09123456789',
+      'clientLocation': 'Lipa City, Batangas',
+      'service': 'Haircut',
       'date': '2024-10-30 10:00 AM',
       'price': '₱200',
-      'status': 'upcoming', // Added status field
+      'status': 'upcoming',
     },
     {
-      'image': 'lib/assets/BS1.jpg',
-      'shopName': 'Batangas Blade',
-      'address': '87 San Jose Street, Batangas City, Batangas, 4200',
+      'image': 'lib/assets/2.jpg',
+      'clientName': 'Jane Smith',
+      'clientNumber': '09876543210',
+      'clientLocation': 'Batangas City, Batangas',
+      'service': 'Shave',
       'date': '2024-10-31 02:00 PM',
       'price': '₱150',
-      'status': 'completed', // Added status field
+      'status': 'completed',
     },
     {
-      'image': 'lib/assets/BS2.jpg',
-      'shopName': 'Elite Cuts',
-      'address': '125 JP Rizal Avenue, Tanauan City, Batangas, 4232',
+      'image': 'lib/assets/3.jpg',
+      'clientName': 'Michael Johnson',
+      'clientNumber': '09123456780',
+      'clientLocation': 'Tanauan City, Batangas',
+      'service': 'Beard Trim',
       'date': '2024-11-01 11:30 AM',
       'price': '₱150',
-      'status': 'upcoming', // Added status field
+      'status': 'upcoming',
     },
     {
-      'image': 'lib/assets/BS3.jpg',
-      'shopName': 'Sharp and Dapper',
-      'address': 'Corner of J. Gonzales and Mabini Streets, Nasugbu, Batangas, 4231',
+      'image': 'lib/assets/4.jpg',
+      'clientName': 'Emily Davis',
+      'clientNumber': '09123456781',
+      'clientLocation': 'Nasugbu, Batangas',
+      'service': 'Hair Color',
       'date': '2024-11-02 01:00 PM',
       'price': '₱100',
-      'status': 'cancelled', // Added status field
+      'status': 'cancelled',
     },
   ];
 
   @override
   void initState() {
     super.initState();
-    // Initialize appointments only once
     if (widget.appointments.isEmpty) {
       widget.appointments.addAll(dummyAppointments);
     }
@@ -66,7 +73,6 @@ class _AppointmentPageState extends State<AppointmentPage> {
         selectedIndex: 1,
         onTap: (index) {
           // Handle bottom nav bar item taps here
-          // Implement navigation logic if needed
         },
       ),
       body: SafeArea(
@@ -75,7 +81,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 30),
               child: Text(
-                'Appointment',
+                'Appointments',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -138,13 +144,10 @@ class _AppointmentPageState extends State<AppointmentPage> {
     // Filter appointments based on the selected tab
     List<Map<String, dynamic>> filteredAppointments;
     if (_selectedTab == 0) {
-      // Upcoming appointments
       filteredAppointments = widget.appointments.where((appointment) => appointment['status'] == 'upcoming').toList();
     } else if (_selectedTab == 1) {
-      // Completed appointments
       filteredAppointments = widget.appointments.where((appointment) => appointment['status'] == 'completed').toList();
     } else {
-      // Cancelled appointments
       filteredAppointments = widget.appointments.where((appointment) => appointment['status'] == 'cancelled').toList();
     }
 
@@ -177,8 +180,8 @@ class _AppointmentPageState extends State<AppointmentPage> {
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
                         appointment['image'] ?? 'lib/assets/default_image.jpg',
-                        height: 50,
-                        width: 50,
+                        height: 100,
+                        width: 100,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -188,7 +191,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            appointment['shopName'] ?? 'Unknown Shop',
+                            'Client: ${appointment['clientName'] ?? 'N/A'}',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -197,7 +200,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            appointment['address'] ?? 'No address provided',
+                            'Contact: ${appointment['clientNumber'] ?? 'N/A'}',
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.grey[600],
@@ -205,7 +208,23 @@ class _AppointmentPageState extends State<AppointmentPage> {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            appointment['date'] ?? 'No date provided',
+                            'Location: ${appointment['clientLocation'] ?? 'N/A'}',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            'Service: ${appointment['service'] ?? 'N/A'}',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            'Date: ${appointment['date'] ?? 'N/A'}',
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.grey[600],
@@ -227,17 +246,17 @@ class _AppointmentPageState extends State<AppointmentPage> {
                         color: Colors.black,
                       ),
                     ),
-                    if (appointment['status'] == 'upcoming') // Show Cancel button only for upcoming appointments
+                    if (appointment['status'] == 'upcoming') // Show Mark as Complete button only for upcoming appointments
                       ElevatedButton(
                         onPressed: () {
-                          _showCancelConfirmationDialog(appointment);
+                          _showConfirmationDialog(appointment);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
+                          backgroundColor: Colors.green,
                           side: BorderSide(color: Colors.white),
                         ),
                         child: Text(
-                          'Cancel Appointment',
+                          'Mark as Complete',
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -253,29 +272,26 @@ class _AppointmentPageState extends State<AppointmentPage> {
     );
   }
 
-  void _showCancelConfirmationDialog(Map<String, dynamic> appointment) {
+  void _showConfirmationDialog(Map<String, dynamic> appointment) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Cancel Appointment'),
-          content: Text('Are you sure you want to cancel this appointment?'),
+          title: Text('Confirm Completion'),
+          content: Text('Are you sure you want to mark this appointment as completed?'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('No'),
+              child: Text('Cancel'),
             ),
             TextButton(
               onPressed: () {
-                setState(() {
-                  appointment['status'] = 'cancelled'; // Update the appointment status
-                });
                 Navigator.of(context).pop(); // Close the dialog
-                _showCancellationSuccessPopup(); // Show success message
+                _markAsCompleted(appointment); // Mark appointment as completed
               },
-              child: Text('Yes'),
+              child: Text('Confirm'),
             ),
           ],
         );
@@ -283,13 +299,20 @@ class _AppointmentPageState extends State<AppointmentPage> {
     );
   }
 
-  void _showCancellationSuccessPopup() {
+  void _markAsCompleted(Map<String, dynamic> appointment) {
+    setState(() {
+      appointment['status'] = 'completed'; // Update the appointment status
+    });
+    _showCompletionSuccessPopup(); // Show success message
+  }
+
+  void _showCompletionSuccessPopup() {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Schedule Cancelled'),
-          content: Text('Your appointment has been successfully cancelled.'),
+          title: Text('Success'),
+          content: Text('The appointment has been marked as completed.'),
           actions: [
             TextButton(
               onPressed: () {

@@ -1,93 +1,123 @@
 {
-    "barbershops": [
-      {
-        "id": 1,
-        "name": "Groom and Glory",
-        "location": "15 P. Laurel Highway, Lipa City, Batangas, 4217",
-        "contact_number": "0917-123-4567",
-        "rating": 4.7,
-        "services": [
-          {
-            "name": "Haircut",
-            "price": 350
-          },
-          {
-            "name": "Haircut + Shave",
-            "price": 500
-          },
-          {
-            "name": "Scalp Treatment",
-            "price": 700
-          }
-        ],
-        "image": "lib/assets/BS.jpeg"
-      },
-      {
-        "id": 2,
-        "name": "Batangas Blade",
-        "location": "87 San Jose Street, Batangas City, Batangas, 4200",
-        "contact_number": "0927-654-3210",
-        "rating": 4.5,
-        "services": [
-          {
-            "name": "Beard Trim",
-            "price": 200
-          },
-          {
-            "name": "Haircut",
-            "price": 300
-          },
-          {
-            "name": "Hot Towel Shave",
-            "price": 250
-          }
-        ],
-        "image": "lib/assets/BS1.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Elite Cuts",
-        "location": "125 JP Rizal Avenue, Tanauan City, Batangas, 4232",
-        "contact_number": "0918-789-1011",
-        "rating": 4.9,
-        "services": [
-          {
-            "name": "Haircut",
-            "price": 400
-          },
-          {
-            "name": "Beard Trim",
-            "price": 250
-          },
-          {
-            "name": "Hair Color",
-            "price": 600
-          }
-        ],
-        "image": "lib/assets/BS2.jpg"
-      },
-      {
-        "id": 4,
-        "name": "Sharp and Dapper",
-        "location": "Corner of J. Gonzales and Mabini Streets, Nasugbu, Batangas, 4231",
-        "contact_number": "0928-543-2112",
-        "rating": 4.6,
-        "services": [
-          {
-            "name": "Haircut",
-            "price": 350
-          },
-          {
-            "name": "Shave",
-            "price": 150
-          },
-          {
-            "name": "Facial Massage",
-            "price": 500
-          }
-        ],
-        "image": "lib/assets/BS3.jpg"
-      }
-    ]
-  }
-  
+  "barbershops": [
+    {
+      "id": 1,
+      "name": "Groom and Glory",
+      "location": "15 P. Laurel Highway, Lipa City, Batangas, 4217",
+      "contact_number": "0917-123-4567",
+      "rating": 4.7,
+      "services": [
+        {"name": "Haircut", "price": 150},
+        {"name": "Haircut + Shave", "price": 200},
+        {"name": "Scalp Treatment", "price": 700}
+      ],
+      "description": "A premier barbershop offering a range of grooming services to keep you looking sharp.",
+      "hours": [
+        {"day": "Monday", "time": "9 AM - 7 PM"},
+        {"day": "Tuesday", "time": "9 AM - 7 PM"},
+        {"day": "Wednesday", "time": "9 AM - 7 PM"},
+        {"day": "Thursday", "time": "9 AM - 7 PM"},
+        {"day": "Friday", "time": "9 AM - 7 PM"},
+        {"day": "Saturday", "time": "9 AM - 6 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ],
+      "image": "lib/assets/BS.jpeg",
+      "barbers": [1, 2] 
+    },
+    {
+      "id": 2,
+      "name": "Batangas Blade",
+      "location": "87 San Jose Street, Batangas City, Batangas, 4200",
+      "contact_number": "0927-654-3210",
+      "rating": 4.5,
+      "services": [
+        {"name": "Beard Trim", "price": 200},
+        {"name": "Haircut", "price": 300},
+        {"name": "Hot Towel Shave", "price": 250}
+      ],
+      "description": "Expert barbers ready to give you the best beard and haircut experience.",
+      "hours": [
+        {"day": "Monday", "time": "9 AM - 7 PM"},
+        {"day": "Tuesday", "time": "9 AM - 7 PM"},
+        {"day": "Wednesday", "time": "9 AM - 7 PM"},
+        {"day": "Thursday", "time": "9 AM - 7 PM"},
+        {"day": "Friday", "time": "9 AM - 7 PM"},
+        {"day": "Saturday", "time": "9 AM - 6 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ],
+      "image": "lib/assets/BS1.jpg",
+      "barbers": [3,4] 
+    },
+    {
+      "id": 3,
+      "name": "Elite Cuts",
+      "location": "125 JP Rizal Avenue, Tanauan City, Batangas, 4232",
+      "contact_number": "0918-789-1011",
+      "rating": 4.9,
+      "services": [
+        {"name": "Haircut", "price": 400},
+        {"name": "Beard Trim", "price": 250},
+        {"name": "Hair Color", "price": 600}
+      ],
+      "description": "Where style meets sophistication. Get the cut that makes you stand out.",
+      "hours": [
+        {"day": "Monday", "time": "9 AM - 7 PM"},
+        {"day": "Tuesday", "time": "9 AM - 7 PM"},
+        {"day": "Wednesday", "time": "9 AM - 7 PM"},
+        {"day": "Thursday", "time": "9 AM - 7 PM"},
+        {"day": "Friday", "time": "9 AM - 7 PM"},
+        {"day": "Saturday", "time": "9 AM - 6 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ],
+      "image": "lib/assets/BS2.jpg",
+      "barbers": [5,6] 
+    },
+    {
+      "id": 4,
+      "name": "Sharp and Dapper",
+      "location": "Corner of J. Gonzales and Mabini Streets, Nasugbu, Batangas, 4231",
+      "contact_number": "0928-543-2112",
+      "rating": 4.6,
+      "services": [
+        {"name": "Haircut", "price": 350},
+        {"name": "Shave", "price": 150},
+        {"name": "Facial Massage", "price": 500}
+      ],
+      "description": "The go-to place for modern cuts and classic grooming.",
+      "hours": [
+        {"day": "Monday", "time": "9 AM - 7 PM"},
+        {"day": "Tuesday", "time": "9 AM - 7 PM"},
+        {"day": "Wednesday", "time": "9 AM - 7 PM"},
+        {"day": "Thursday", "time": "9 AM - 7 PM"},
+        {"day": "Friday", "time": "9 AM - 7 PM"},
+        {"day": "Saturday", "time": "9 AM - 6 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ],
+      "image": "lib/assets/BS3.jpg",
+      "barbers": [7,8] 
+    },
+    {
+      "id": 5,
+      "name": "Barbershop X",
+      "location": "10 A. Rodriguez Avenue, Batangas City, Batangas, 4200",
+      "contact_number": "0912-345-6789",
+      "rating": 4.4,
+      "services": [
+        {"name": "Haircut", "price": 200},
+        {"name": "Beard Trim", "price": 150}
+      ],
+      "description": "A cozy place to relax and get your hair done.",
+      "hours": [
+        {"day": "Monday", "time": "10 AM - 8 PM"},
+        {"day": "Tuesday", "time": "10 AM - 8 PM"},
+        {"day": "Wednesday", "time": "10 AM - 8 PM"},
+        {"day": "Thursday", "time": "10 AM - 8 PM"},
+        {"day": "Friday", "time": "10 AM - 8 PM"},
+        {"day": "Saturday", "time": "10 AM - 6 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ],
+      "image": "lib/assets/BS4.jpg",
+      "barbers": [9,10]
+    }
+  ]
+}

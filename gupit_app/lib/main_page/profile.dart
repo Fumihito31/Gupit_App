@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../components/background.dart'; // Import the background file
 import '../components/bot_nav.dart'; // Import the custom Bottom Navigation Bar
 import '../create_account/login_page.dart'; // Import the LoginPage
+import 'barberAppointment.dart'; // Import the BarberAppointment page
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -52,7 +53,8 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Background( // Apply black background
+      body: Container( // Use Container for a white background
+        color: Colors.white, // Set background color to white
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -71,32 +73,54 @@ class _ProfilePageState extends State<ProfilePage> {
               Center(
                 child: Text(
                   'Gelo Paragas', // User name
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white), // Set text color to white
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black), // Set text color to black
                 ),
               ),
               SizedBox(height: 5),
               Center(
                 child: Text(
                   'gelo@gmail.com', // User email
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.grey[800]), // Use a darker grey for visibility
                 ),
               ),
               SizedBox(height: 20),
 
-              Divider(color: Colors.white), // White divider to match dark background
+              Divider(color: Colors.black), // Black divider to match the light background
 
               // Profile fields
               buildProfileField('Username', 'Gelo Paragas'),
               buildProfileField('Phone', '+123 456 789'),
               buildProfileField('Location', 'Calamba, Philippines'),
 
-              Divider(color: Colors.white), // White divider
+              Divider(color: Colors.black), // Black divider
+
+              // Schedule button to navigate to barberAppointment.dart
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Navigate to the BarberAppointment page
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BarberAppointmentPage(appointments: [],)),
+                    );
+                  },
+                  child: Text('Schedule'),
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white, backgroundColor: Colors.amber, // Set text color
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 20), // Add space before the logout button
 
               // Logout button
               Center(
                 child: ElevatedButton(
                   onPressed: _confirmLogout, // Call the confirm logout function
                   child: Text('Logout'),
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white, backgroundColor: Colors.red, // Set text color
+                  ),
                 ),
               ),
             ],
@@ -117,8 +141,8 @@ class _ProfilePageState extends State<ProfilePage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: TextStyle(fontSize: 16, color: Colors.white)), // Set label text color to white
-          Text(value, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)), // Set value text color to white
+          Text(label, style: TextStyle(fontSize: 16, color: Colors.black)), // Set label text color to black
+          Text(value, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)), // Set value text color to black
         ],
       ),
     );

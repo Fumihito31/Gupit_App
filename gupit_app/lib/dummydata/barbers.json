@@ -1,56 +1,298 @@
 {
-    "barbers": [
-      {
-        "id": 1,
-        "name": "Oscar's Barbershop",
-        "location": "123 Rizal Avenue, Batangas City, Batangas, 4200",
-        "rating": 4.5,
-        "services": [
-          {
-            "name": "Haircut",
-            "price": 300
-          },
-          {
-            "name": "Shave",
-            "price": 150
-          }
-        ],
-        "image": "lib/assets/BS2.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Old Town Barbershop",
-        "location": "456 P. Burgos Street, Lipa City, Batangas, 4217",
-        "rating": 4.2,
-        "services": [
-          {
-            "name": "Haircut",
-            "price": 250
-          },
-          {
-            "name": "Beard Trim",
-            "price": 100
-          }
-        ],
-        "image": "lib/assets/BS1.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Downtown Clippers",
-        "location": "789 Mabini Street, Tanauan City, Batangas, 4232",
-        "rating": 4.8,
-        "services": [
-          {
-            "name": "Haircut",
-            "price": 350
-          },
-          {
-            "name": "Hair Color",
-            "price": 500
-          }
-        ],
-        "image": "lib/assets/BS3.jpg"
-      }
-    ]
-  }
-  
+  "barbers": [
+    {
+      "id": 1,
+      "name": "Jerald Paragas",
+      "location": "123 Rizal Avenue, Batangas City, Batangas, 4200",
+      "rating": 4.5,
+      "services": [
+        {"name": "Haircut", "price": 130},
+        {"name": "Shave", "price": 150}
+      ],
+      "image": "lib/assets/1.jpg",
+      "description": "A skilled barber specializing in modern and classic haircuts.",
+      "availability": [
+        {"day": "Monday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Tuesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Wednesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Thursday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Friday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Saturday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Aries Jade Ibana",
+      "location": "456 P. Burgos Street, Lipa City, Batangas, 4217",
+      "rating": 4.2,
+      "services": [
+        {"name": "Haircut", "price": 200},
+        {"name": "Beard Trim", "price": 100}
+      ],
+      "image": "lib/assets/2.jpg",
+      "description": "An expert in beard grooming and stylish haircuts.",
+      "availability": [
+        {"day": "Monday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Tuesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Wednesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Thursday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Friday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Carl Morales",
+      "location": "789 Mabini Street, Tanauan City, Batangas, 4232",
+      "rating": 4.8,
+      "services": [
+        {"name": "Haircut", "price": 100},
+        {"name": "Hair Color", "price": 500}
+      ],
+      "image": "lib/assets/3.jpg",
+      "description": "Creative barber with a flair for vibrant hair colors.",
+      "availability": [
+        {"day": "Monday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Tuesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Wednesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Thursday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Friday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Eliza Santos",
+      "location": "135 Legaspi Street, Batangas City, Batangas, 4200",
+      "rating": 4.1,
+      "services": [
+        {"name": "Haircut", "price": 150},
+        {"name": "Hair Color", "price": 400}
+      ],
+      "image": "lib/assets/4.jpg",
+      "description": "Passionate barber offering a wide range of hair services.",
+      "availability": [
+        {"day": "Monday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Tuesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Wednesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Thursday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Friday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Mark Santos",
+      "location": "159 M. H. Del Pilar Street, Lipa City, Batangas, 4217",
+      "rating": 4.3,
+      "services": [
+        {"name": "Haircut", "price": 250},
+        {"name": "Shave", "price": 150}
+      ],
+      "image": "lib/assets/5.jpg",
+      "description": "Experienced barber known for precision haircuts.",
+      "availability": [
+        {"day": "Monday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Tuesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Wednesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Thursday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Friday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Liam Cruz",
+      "location": "10 P. Pedro Street, Batangas City, Batangas, 4200",
+      "rating": 4.6,
+      "services": [
+        {"name": "Fade Cut", "price": 180},
+        {"name": "Beard Sculpting", "price": 120}
+      ],
+      "image": "lib/assets/6.jpg",
+      "description": "Expert in fade cuts and beard grooming.",
+      "availability": [
+        {"day": "Monday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Tuesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Wednesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Thursday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Friday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Sophia Reyes",
+      "location": "25 N. Santos Avenue, Lipa City, Batangas, 4217",
+      "rating": 4.4,
+      "services": [
+        {"name": "Layered Haircut", "price": 200},
+        {"name": "Color Treatment", "price": 450}
+      ],
+      "image": "lib/assets/7.jpg",
+      "description": "Specializes in layered cuts and color treatments.",
+      "availability": [
+        {"day": "Monday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Tuesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Wednesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Thursday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Friday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Nathaniel Lim",
+      "location": "88 A. Delos Reyes Street, Tanauan City, Batangas, 4232",
+      "rating": 4.5,
+      "services": [
+        {"name": "Buzz Cut", "price": 90},
+        {"name": "Scalp Massage", "price": 250}
+      ],
+      "image": "lib/assets/8.jpg",
+      "description": "Provides relaxing scalp massages and trendy buzz cuts.",
+      "availability": [
+        {"day": "Monday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Tuesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Wednesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Thursday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Friday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Isabella Torres",
+      "location": "45 A. Rodriguez Avenue, Batangas City, Batangas, 4200",
+      "rating": 4.7,
+      "services": [
+        {"name": "Pixie Cut", "price": 170},
+        {"name": "Conditioning Treatment", "price": 300}
+      ],
+      "image": "lib/assets/9.jpg",
+      "description": "Known for chic pixie cuts and nourishing treatments.",
+      "availability": [
+        {"day": "Monday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Tuesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Wednesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Thursday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Friday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Gabriel Mendoza",
+      "location": "60 Rizal Street, Lipa City, Batangas, 4217",
+      "rating": 4.6,
+      "services": [
+        {"name": "Crew Cut", "price": 130},
+        {"name": "Hair Treatment", "price": 400}
+      ],
+      "image": "lib/assets/10.jpg",
+      "description": "Expert in crew cuts and hair treatments.",
+      "availability": [
+        {"day": "Monday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Tuesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Wednesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Thursday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Friday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Hannah Lim",
+      "location": "31 J. P. Rizal Avenue, Tanauan City, Batangas, 4232",
+      "rating": 4.5,
+      "services": [
+        {"name": "Bangs Cut", "price": 120},
+        {"name": "Hot Towel Treatment", "price": 200}
+      ],
+      "image": "lib/assets/11.jpg",
+      "description": "Specializes in trendy bang cuts and relaxing hot towel treatments.",
+      "availability": [
+        {"day": "Monday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Tuesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Wednesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Thursday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Friday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Oliver Castillo",
+      "location": "18 P. Panganiban Avenue, Batangas City, Batangas, 4200",
+      "rating": 4.4,
+      "services": [
+        {"name": "Faux Hawk", "price": 150},
+        {"name": "Hair Gel Styling", "price": 100}
+      ],
+      "image": "lib/assets/12.jpg",
+      "description": "Known for stylish faux hawks and expert hair styling.",
+      "availability": [
+        {"day": "Monday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Tuesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Wednesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Thursday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Friday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Ava Santos",
+      "location": "99 M. H. Del Pilar Street, Lipa City, Batangas, 4217",
+      "rating": 4.3,
+      "services": [
+        {"name": "Long Layered Cut", "price": 200},
+        {"name": "Color Highlights", "price": 500}
+      ],
+      "image": "lib/assets/13.jpg",
+      "description": "Specializes in long layered cuts and color highlights.",
+      "availability": [
+        {"day": "Monday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Tuesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Wednesday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Thursday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Friday", "time": "10:00 AM - 5:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Matthew Reyes",
+      "location": "20 D. Silang Street, Tanauan City, Batangas, 4232",
+      "rating": 4.8,
+      "services": [
+        {"name": "Textured Crop", "price": 160},
+        {"name": "Beard Maintenance", "price": 140}
+      ],
+      "image": "lib/assets/14.jpg",
+      "description": "Offers trendy textured crops and professional beard maintenance.",
+      "availability": [
+        {"day": "Monday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Tuesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Wednesday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Thursday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Friday", "time": "9:00 AM - 6:00 PM"},
+        {"day": "Saturday", "time": "10:00 AM - 4:00 PM"},
+        {"day": "Sunday", "time": "Closed"}
+      ]
+    }
+  ]
+}

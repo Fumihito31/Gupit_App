@@ -1,0 +1,92 @@
+[
+    {
+        "clientName": "John Doe",
+        "clientNumber": "09123456789",
+        "clientLocation": "Lipa City, Batangas",
+        "service": "Haircut",
+        "date": "2024-10-30T10:00:00",
+        "price": "₱200",
+        "status": "upcoming"
+    },
+    {
+        "clientName": "Jane Smith",
+        "clientNumber": "09876543210",
+        "clientLocation": "Batangas City, Batangas",
+        "service": "Shave",
+        "date": "2024-10-31T14:00:00",
+        "price": "₱150",
+        "status": "completed"
+    },
+    {
+        "clientName": "Michael Johnson",
+        "clientNumber": "09123456780",
+        "clientLocation": "Tanauan City, Batangas",
+        "service": "Beard Trim",
+        "date": "2024-11-01T11:30:00",
+        "price": "₱150",
+        "status": "upcoming"
+    },
+    {
+        "clientName": "Emily Davis",
+        "clientNumber": "09123456781",
+        "clientLocation": "Nasugbu, Batangas",
+        "service": "Hair Color",
+        "date": "2024-11-02T13:00:00",
+        "price": "₱100",
+        "status": "cancelled"
+    },
+    {
+        "clientName": "Alice Brown",
+        "clientNumber": "09123456782",
+        "clientLocation": "Calatagan, Batangas",
+        "service": "Hair Treatment",
+        "date": "2024-11-03T09:00:00",
+        "price": "₱300",
+        "status": "upcoming"
+    },
+    {
+        "clientName": "David Wilson",
+        "clientNumber": "09123456783",
+        "clientLocation": "San Juan, Batangas",
+        "service": "Men's Haircut",
+        "date": "2024-11-04T15:00:00",
+        "price": "₱250",
+        "status": "completed"
+    },
+    {
+        "clientName": "Sophia Johnson",
+        "clientNumber": "09123456784",
+        "clientLocation": "Mabini, Batangas",
+        "service": "Blow Dry",
+        "date": "2024-11-05T12:30:00",
+        "price": "₱180",
+        "status": "upcoming"
+    },
+    {
+        "clientName": "James Brown",
+        "clientNumber": "09123456785",
+        "clientLocation": "Taal, Batangas",
+        "service": "Full Hair Color",
+        "date": "2024-11-06T11:00:00",
+        "price": "₱400",
+        "status": "cancelled"
+    },
+    {
+        "clientName": "Olivia Martinez",
+        "clientNumber": "09123456786",
+        "clientLocation": "Balayan, Batangas",
+        "service": "Hair Spa",
+        "date": "2024-11-07T14:00:00",
+        "price": "₱250",
+        "status": "completed"
+    },
+    {
+        "clientName": "William Anderson",
+        "clientNumber": "09123456787",
+        "clientLocation": "Lemery, Batangas",
+        "service": "Men's Haircut",
+        "date": "2024-11-08T16:00:00",
+        "price": "₱220",
+        "status": "upcoming"
+    }
+]

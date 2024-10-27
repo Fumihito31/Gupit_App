@@ -73,7 +73,7 @@
           "name": "Hair Comb Set",
           "description": "A set of durable combs for styling and managing hair.",
           "price": 250,
-          "image": "lib/assets/combs.jpg"
+          "image": "lib/assets/comb.jpg"
         }
       ]
     }

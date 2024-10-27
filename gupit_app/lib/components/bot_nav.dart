@@ -20,9 +20,9 @@ class BotNavBar extends StatelessWidget {
       type: BottomNavigationBarType.fixed,
       onTap: (index) {
         onTap(index);
-        _handleNavigation(index, context); // Call the navigation function
+        _handleNavigation(index, context);
       },
-      backgroundColor: const Color.fromARGB(255, 56, 56, 58),
+      backgroundColor: const Color.fromARGB(255, 250, 250, 255),
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined),
@@ -64,7 +64,7 @@ class BotNavBar extends StatelessWidget {
       case 1:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => AppointmentPage()), // Navigate to AppointmentPage
+          MaterialPageRoute(builder: (context) => AppointmentPage(appointments: [])),
         );
         break;
       case 2:
@@ -76,7 +76,7 @@ class BotNavBar extends StatelessWidget {
       case 3:
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => ShopPage()), // Navigate to ShopPage
+          MaterialPageRoute(builder: (context) => ShopPage()),
         );
         break;
       case 4:
@@ -84,9 +84,6 @@ class BotNavBar extends StatelessWidget {
           context,
           MaterialPageRoute(builder: (context) => ProfilePage()),
         );
-        break;
-      default:
-        // Handle other tabs if necessary
         break;
     }
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/background.dart'; // Import your background.dart for the black background
+import '../components/background.dart'; // Import your background.dart for the background
 
 class ConversationPage extends StatelessWidget {
   final String barberName;
@@ -17,7 +17,8 @@ class ConversationPage extends StatelessWidget {
         ),
         elevation: 0,
       ),
-      body: Background( // Apply black background
+      body: Container( // Use Container for a white background
+        color: Colors.white, // Set background color to white
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -52,7 +53,7 @@ class ConversationPage extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyle(color: isSentByMe ? Colors.white : Colors.black),
+          style: TextStyle(color: isSentByMe ? Colors.white : Colors.black), // Change text color to black
         ),
       ),
     );
@@ -77,7 +78,7 @@ class ConversationPage extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.send),
+            icon: Icon(Icons.send, color: Colors.black), // Change icon color to black
             onPressed: () {
               // Handle send message action
             },
